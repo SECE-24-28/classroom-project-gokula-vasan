@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Application Form</title>
+</head>
+
+<body>
+
+    <center>
+    <h1>Job Application</h1>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 20px;
+    }
+
+    h1 {
+    color: #333;
+    }
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 300px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="date"], 
+input[type="number"], 
+input[type="tel"], 
+select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #357ae8;
+}
+
+    </style>
+
+    <form>
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Address:</label><br>
+        <input type="text" name="address" required>
+        <br><br>
+
+        <label>Date of Birth:</label><br>
+        <input type="date" name="dob" required>
+        <br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" max="100" required>
+        <br><br>
+
+        <label>Phone Number:</label><br>
+        <input type="tel" name="phone" maxlength="10" required>
+        <br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" value="Male"> Male <br>
+        <input type="radio" name="gender" value="Female"> Female <br>
+        <input type="radio" name="gender" value="Other"> Other <br><br>
+
+        <label>Applying for:</label><br>
+        <select name="jobrole" required>
+            <option value="">-- Select Job Role --</option>
+            <option>Developer</option>
+            <option>Designer</option>
+            <option>Accountant</option>
+            <option>Manager</option>
+            <option>HR Assistant</option>
+        </select>
+        <br><br>
+
+        <label>Skills:</label><br>
+        <input type="checkbox" name="skill" value="Communication"> Communication <br>
+        <input type="checkbox" name="skill" value="Teamwork"> Teamwork <br>
+        <input type="checkbox" name="skill" value="Coding"> Coding <br>
+        <input type="checkbox" name="skill" value="Problem Solving"> Problem Solving <br><br>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+    </center>
+
+</body>
+</html>
