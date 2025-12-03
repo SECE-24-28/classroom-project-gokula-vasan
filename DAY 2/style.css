@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.home-body,
+.login-body {
+    background: linear-gradient(135deg,rgba(0, 0, 255, 0.625), pink);
+    min-height: 100vh;
+}
+
+.home-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(4, 11, 72, 0.1);
+    overflow: hidden;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
+.header {
+    background-color: rgba(73, 75, 76, 0.832);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #f1f8ff;
+    position: relative;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 16px;
+}
+
+.main-content {
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.home-login-btn {
+    display: inline-block;
+    background-color: #63717c;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(235, 240, 245, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    top: 10px;
+}
+
+.home-login-btn:hover {
+    background-color: #4d535a;
+    box-shadow: 0 8px 20px rgba(143, 152, 161, 0.4);
+}
+
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-top: 5px solid #1a252f;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px;
+    position: relative;
+}
+
+.form h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.field label {
+    font-weight: 600;
+    color: #37474f;
+}
+
+/* ✔ Updated: Password field added */
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+    display: block;
+    box-sizing: border-box;
+}
+
+/* ✔ Updated: Focus effect for password */
+.field input[type="text"]:focus,
+.field input[type="email"]:focus,
+.field input[type="tel"]:focus,
+.field input[type="password"]:focus {
+    border-color: #470a36;
+    box-shadow: 0 0 6px rgba(243, 142, 33, 0.3);
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #7a788b;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #3f4246;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+}
+
+.back-home-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #020202;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+.back-home-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 24px;
+    }
+    .section-title {
+        font-size: 18px;
+    }
+    .home-login-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .card {
+        width: 92%;
+        padding: 20px;
+    }
+}

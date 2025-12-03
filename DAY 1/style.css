@@ -1,0 +1,111 @@
+
+
+:root{
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --accent: #0b6cff;
+  --text: #222;
+  --muted: #555;
+  --radius: 8px;
+  --gap: 16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.45;
+  padding: 30px 16px;
+}
+
+
+.page{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.hero{
+  text-align: center;
+  margin-bottom: 18px;
+}
+.hero h1{
+  margin: 0;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+}
+.meta{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.meta a{ color: var(--accent); text-decoration: none }
+
+.content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+
+.card{
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(12,20,36,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.card h2{
+  margin:0 0 8px 0;
+  font-size: 18px;
+  color: var(--accent);
+  border-bottom: none;
+}
+
+
+.card h3{
+  margin: 8px 0;
+  font-size: 15px;
+  color: #333;
+}
+.card p, .card li {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+
+.skills-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+.skill-block{
+  background: #fbfdff;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.skill-block strong{display:block; margin-bottom:6px; color:#222}
+
+
+.footer{
+  text-align:center;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+@media (max-width:640px){
+  .skills-grid{ grid-template-columns: 1fr; }
+  .page{ padding: 0 12px; }
+}
