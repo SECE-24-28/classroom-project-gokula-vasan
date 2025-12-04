@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Ticket Booking</title>
+<script>
+function validateMovie() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let movie = document.getElementById("movie").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let seats = document.getElementById("seats").value;
+
+    if (name.trim() === "") {
+        alert("Name is required");
+        return false;
+    }
+    if (!email.includes("@")) {
+        alert("Enter valid email");
+        return false;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Phone must be 10 digits");
+        return false;
+    }
+    if (movie.trim() === "") {
+        alert("Movie name required");
+        return false;
+    }
+    if (date === "") {
+        alert("Select date");
+        return false;
+    }
+    if (time === "") {
+        alert("Select time");
+        return false;
+    }
+    if (seats < 1 || seats > 10) {
+        alert("Seats must be between 1 and 10");
+        return false;
+    }
+}
+</script>
+</head>
+
+<body>
+<h2>Movie Ticket Booking Form</h2>
+
+<form onsubmit="return validateMovie()">
+Name: <input type="text" id="name"><br><br>
+Email: <input type="text" id="email"><br><br>
+Phone: <input type="text" id="phone"><br><br>
+Movie Name: <input type="text" id="movie"><br><br>
+Date: <input type="date" id="date"><br><br>
+Time: 
+<select id="time">
+  <option value="">Select</option>
+  <option>10:00 AM</option>
+  <option>1:00 PM</option>
+  <option>4:00 PM</option>
+  <option>7:00 PM</option>
+</select><br><br>
+Seats: <input type="number" id="seats"><br><br>
+
+<button type="submit">Book Ticket</button>
+</form>
+
+</body>
+</html>

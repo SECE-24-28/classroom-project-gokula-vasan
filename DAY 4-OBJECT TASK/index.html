@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form in JavaScript</title>
+    <style>
+        body { font-family: Arial; background:#f2f2f2; padding:20px; }
+        .form-box { background:white; padding:20px; width:300px; border-radius:8px; }
+        input, select { width:100%; padding:8px; margin:6px 0; }
+        button { width:100%; padding:10px; background:#007bff; color:#fff; border:none; border-radius:5px; }
+        #result { margin-top:20px; padding:10px; background:white; border-radius:8px; }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h3>Student Form</h3>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Age:</label>
+    <input type="number" id="age">
+
+    <label>Department:</label>
+    <select id="dept">
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="IT">IT</option>
+    </select>
+
+    <button onclick="submitForm()">Submit</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+function submitForm() {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let dept = document.getElementById("dept").value;
+
+    if (name === "" || age === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h4>Student Details</h4>" +
+        "<p><strong>Name:</strong> " + name + "</p>" +
+        "<p><strong>Age:</strong> " + age + "</p>" +
+        "<p><strong>Department:</strong> " + dept + "</p>";
+}
+</script>
+
+</body>
+</html>
