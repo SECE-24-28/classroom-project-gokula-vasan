@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Railway Ticket</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef1f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .form-box {
+        background: #fff;
+        width: 420px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #444;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    input:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    }
+
+    button {
+        width: 100%;
+        background: #007bff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+</style>
+
+<script>
+function validateRail() {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let train = document.getElementById("train").value;
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    let date = document.getElementById("date").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+
+    if (name.trim() === "") {
+        alert("Name required");
+        return false;
+    }
+    if (age < 1 || age > 120) {
+        alert("Enter valid age");
+        return false;
+    }
+    if (!/^\d{5}$/.test(train)) {
+        alert("Train number must be 5 digits");
+        return false;
+    }
+    if (from.trim() === "" || to.trim() === "") {
+        alert("Enter both stations");
+        return false;
+    }
+    if (from === to) {
+        alert("From and To cannot be same");
+        return false;
+    }
+    if (date === "") {
+        alert("Select journey date");
+        return false;
+    }
+    if (!email.includes("@")) {
+        alert("Enter valid email");
+        return false;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Phone must be 10 digits");
+        return false;
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="form-box">
+<h2>Railway Ticket Booking</h2>
+
+<form onsubmit="return validateRail()">
+
+<label>Name:</label>
+<input type="text" id="name">
+
+<label>Age:</label>
+<input type="number" id="age">
+
+<label>Train No:</label>
+<input type="text" id="train">
+
+<label>From:</label>
+<input type="text" id="from">
+
+<label>To:</label>
+<input type="text" id="to">
+
+<label>Date:</label>
+<input type="date" id="date">
+
+<label>Email:</label>
+<input type="text" id="email">
+
+<label>Phone:</label>
+<input type="text" id="phone">
+
+<button type="submit">Book Ticket</button>
+</form>
+
+</div>
+
+</body>
+</html>

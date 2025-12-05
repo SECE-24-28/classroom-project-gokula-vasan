@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Ticket Booking</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #d8ecec;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .form-container {
+        background: white;
+        padding: 25px;
+        width: 380px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        color: #444;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    input:focus, select:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0,123,255,0.4);
+    }
+
+    button {
+        width: 100%;
+        background: #007bff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+</style>
+
+<script>
+function validateMovie() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let movie = document.getElementById("movie").value;
+    let date = document.getElementById("date").value;
+    let time = document.getElementById("time").value;
+    let seats = document.getElementById("seats").value;
+
+    if (name.trim() === "") {
+        alert("Name is required");
+        return false;
+    }
+    if (!email.includes("@")) {
+        alert("Enter valid email");
+        return false;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Phone must be 10 digits");
+        return false;
+    }
+    if (movie.trim() === "") {
+        alert("Movie name required");
+        return false;
+    }
+    if (date === "") {
+        alert("Select date");
+        return false;
+    }
+    if (time === "") {
+        alert("Select time");
+        return false;
+    }
+    if (seats < 1 || seats > 10) {
+        alert("Seats must be between 1 and 10");
+        return false;
+    }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="form-container">
+<h2>Movie Ticket Booking</h2>
+
+<form onsubmit="return validateMovie()">
+    <label>Name:</label>
+    <input type="text" id="name">
+
+    <label>Email:</label>
+    <input type="text" id="email">
+
+    <label>Phone:</label>
+    <input type="text" id="phone">
+
+    <label>Movie Name:</label>
+    <input type="text" id="movie">
+
+    <label>Date:</label>
+    <input type="date" id="date">
+
+    <label>Time:</label>
+    <select id="time">
+        <option value="">Select</option>
+        <option>10:00 AM</option>
+        <option>1:00 PM</option>
+        <option>4:00 PM</option>
+        <option>7:00 PM</option>
+    </select>
+
+    <label>Seats:</label>
+    <input type="number" id="seats">
+
+    <button type="submit">Book Ticket</button>
+</form>
+</div>
+
+</body>
+</html>

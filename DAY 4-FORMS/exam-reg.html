@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Registration</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef1f6;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+
+    .form-box {
+        background: #fff;
+        width: 420px;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    label {
+        font-weight: bold;
+        color: #444;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    input:focus, select:focus {
+        border-color: #0066ff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 102, 255, 0.5);
+    }
+
+    button {
+        width: 100%;
+        background: #0066ff;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #004db3;
+    }
+</style>
+
+<script>
+function validateExam() {
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let course = document.getElementById("course").value;
+    let marks = document.getElementById("marks").value;
+    let center = document.getElementById("center").value;
+    let file = document.getElementById("file").value;
+
+    if (name.trim() === "") {
+        alert("Name required");
+        return false;
+    }
+    if (dob === "") {
+        alert("DOB required");
+        return false;
+    }
+    if (!email.includes("@")) {
+        alert("Enter valid email");
+        return false;
+    }
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Enter valid 10-digit phone");
+        return false;
+    }
+    if (course === "") {
+        alert("Select course");
+        return false;
+    }
+    if (marks < 0 || marks > 100) {
+        alert("Marks must be 0–100");
+        return false;
+    }
+    if (center.trim() === "") {
+        alert("Exam center required");
+        return false;
+    }
+    if (!file.endsWith(".pdf")) {
+        alert("Upload PDF only");
+        return false;
+    }
+}
+</script>
+</head>
+
+<body>
+
+<div class="form-box">
+<h2>Exam Registration Form</h2>
+
+<form onsubmit="return validateExam()">
+
+<label>Name:</label>
+<input type="text" id="name">
+
+<label>DOB:</label>
+<input type="date" id="dob">
+
+<label>Email:</label>
+<input type="text" id="email">
+
+<label>Phone:</label>
+<input type="text" id="phone">
+
+<label>Course:</label>
+<select id="course">
+  <option value="">Select</option>
+  <option>BSc</option>
+  <option>BCom</option>
+  <option>MBA</option>
+  <option>MCA</option>
+</select>
+
+<label>Marks (%):</label>
+<input type="number" id="marks">
+
+<label>Exam Center:</label>
+<input type="text" id="center">
+
+<label>Upload ID Proof (PDF):</label>
+<input type="file" id="file">
+
+<button type="submit">Register</button>
+</form>
+
+</div>
+
+</body>
+</html>
